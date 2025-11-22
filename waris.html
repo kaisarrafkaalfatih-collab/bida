@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Simulasi Faraid Waris- </title>
+<link rel="stylesheet" href="style.css">
+<script src='https://sites.google.com/site/tessiter/sitetes/waris.js' type='text/javascript'></script>
+<script type="text/javascript" src="desimal.js"></script>		
+	
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFFF;
+}
+-->
+</style></head>
+
+<body>
+	
+<form action="#" enctype="text/plain" method="POST" name="faraid" target="_self">
+<table align="center" border="0" cellpadding="2" cellspacing="1" class="faraid" style="width: 100%px;"><tbody>
+<tr>     <td colspan="4"><div align="center"><span class="style1">SIMULASI FARAID</span></div></td>   </tr>
+<tr>     <td></td>   </tr>
+<tr>     <td colspan="2"><span class="style2"> Yang Meninggal </span></td>     
+  <td></td>      <td></td>   </tr>
+<tr>     <td></td>     <td><span class="style2">
+<select id="JenisKelamin" name="JenisKelamin" onchange="change_jeniskelamin()">
+<option value="0">Laki - Laki</option>
+<option value="1">Wanita</option>
+
+</select>
+</span></td>      <td></td>     <td></td>   </tr>
+<tr>     <td width="4%"></td>     <td width="70%"></td>      <td width="15%"></td>     <td width="11%"></td>   </tr>
+<tr>     <td colspan="4"><b class="style2">Harta Warisan </b></td>   </tr>
+<tr>     <td></td>      <td bgcolor="#CCCCCC" class="faraid_out">Total Harta </td>     <td bgcolor="#CCCCCC" class="faraid_out">Rp.
+<input id="TotalHarta" name="TotalHarta" onkeyup="calculate_hartawarisan()" type="text" value="0" />    </td>      <td></td>   </tr>
+<tr>     <td></td>      <td bgcolor="#CCCCCC" class="faraid_out">Pengurusan Jenazah </td>     <td bgcolor="#CCCCCC" class="faraid_out" nowrap="nowrap">Rp.
+<input id="PengurusanJenazah" name="PengurusanJenazah" onkeyup="calculate_hartawarisan()" type="text" value="0" /></td><td></td>   </tr>
+<tr>      <td></td>     <td bgcolor="#CCCCCC" class="faraid_out">Pembayaran Hutang </td>      <td bgcolor="#CCCCCC" class="faraid_out">Rp.
+<input id="PembayaranHutang" name="PembayaranHutang" onkeyup="calculate_hartawarisan()" type="text" value="0" /></td><td></td>   </tr>
+<tr>     <td></td>     <td bgcolor="#CCCCCC" class="faraid_out">Wasiat</td>      <td bgcolor="#CCCCCC" class="faraid_out">Rp.
+<input id="Wasiat" name="Wasiat" onkeyup="calculate_hartawarisan()" type="text" value="0" /></td><td></td>   </tr>
+<tr>     <td></td>     <td></td>     <td></td>     <td></td>   </tr>
+<tr>     <td></td>     <td bgcolor="#FF9900" class="faraid_out">Harta Warisan </td>     <td bgcolor="#FF9900" class="faraid_out">Rp.
+<input id="HartaWarisan" name="HartaWarisan" onkeyup="calculate_hartawarisan()" readonly="readonly" type="text" value="0" /></td><td></td>   </tr>
+<tr>     <td></td>      <td></td>      <td></td>     <td></td>   </tr>
+<tr>     <td colspan="4"><b class="style2">Ahli Waris </b></td>   </tr>
+<tr>      <td></td>      <td colspan="2">
+<input id="hHartaWarisan" name="hHartaWarisan" input type="hidden" onkeyup="calculate_hartawarisan()" readonly="readonly"  value="0" /></td><td></td>   </tr>
+
+<tr>      <td></td>      <td colspan="2">
+<table align="center" bgcolor="#CCCCCC" border="0" bordercolor="#CCCCCC" cellpadding="2" cellspacing="1" class="faraid_in" style="width: 100%px;"><tbody>
+<tr>         <td bgcolor="#999999" class="faraid_out" width="3%"><input id="ch_ahliwaris_1" name="ch_ahliwaris_1" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="1" /></td>         <td bgcolor="#999999" class="faraid_out" width="25%">1. <label id="l_ahliwaris_1">
+Anak Laki-laki</label> </td>         <td bgcolor="#999999" class="faraid_out" width="2%"><input id="ch_ahliwaris_11" name="ch_ahliwaris_11" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="11" /></td>          <td bgcolor="#999999" class="faraid_out" width="36%">11. <label id="l_ahliwaris_11">
+Saudara kandung Lk</label> </td>          <td bgcolor="#999999" class="faraid_out" width="3%"><input id="ch_ahliwaris_21" name="ch_ahliwaris_21" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="21" /></td>         <td bgcolor="#999999" class="faraid_out" width="31%">21. <label id="l_ahliwaris_21">
+Anak Lk saudara kandung Lk dr bapak</label></td>         </tr>
+<tr>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_1" name="cb_ahliwaris_1">
+<option selected="selected" value="0">0</option>
+
+</select>
+</td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_11" name="cb_ahliwaris_11">
+
+<option selected="selected" value="0">0</option>
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_21" name="cb_ahliwaris_21">
+<option selected="selected" value="0">0</option>
+</select></td>          </tr>
+<tr>         <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_2" name="ch_ahliwaris_2" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="2" /></td>         <td bgcolor="#999999" class="faraid_out">2. <label id="l_ahliwaris_2">
+Anak Wanita</label></td>          <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_12" name="ch_ahliwaris_12" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="12" /></td>         <td bgcolor="#999999" class="faraid_out">12. <label id="l_ahliwaris_12">
+
+Saudara kandung Wnt</label></td>         <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_22" name="ch_ahliwaris_22" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="22" /></td>         <td bgcolor="#999999" class="faraid_out">22. <label id="l_ahliwaris_22">
+Anak Lk dr saudara se-bapak dr pihak bapak</label></td>         </tr>
+<tr>         <td bgcolor="#CCCCCC" class="faraid_out"></td>          <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_2" name="cb_ahliwaris_2">
+<option selected="selected" value="0">0</option>
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_12" name="cb_ahliwaris_12">
+<option selected="selected" value="0">0</option>
+</select></td>          <td bgcolor="#CCCCCC" class="faraid_out"></td>          <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_22" name="cb_ahliwaris_22">
+<option selected="selected" value="0">0</option>
+</select></td>         </tr>
+<tr bgcolor="#999999">         <td class="faraid_out"><input id="ch_ahliwaris_3" name="ch_ahliwaris_3" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="3" /></td>         <td class="faraid_out">3. <label id="l_ahliwaris_3">Istri</label></td>          <td class="faraid_out"><input id="ch_ahliwaris_13" name="ch_ahliwaris_13" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="13" /></td>         <td class="faraid_out">13. <label id="l_ahliwaris_13">Saudara Lk 
+se-bapak</label></td>         <td class="faraid_out"><input id="ch_ahliwaris_23" name="ch_ahliwaris_23" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="23" /></td>         <td class="faraid_out">23. <label id="l_ahliwaris_23">Budak Lk yg 
+dibebaskan oleh si mayit</label></td>         </tr>
+<tr>          <td bgcolor="#CCCCCC" class="faraid_out"></td>          <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_3" name="cb_ahliwaris_3">
+<option selected="selected" value="0">0</option>
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_13" name="cb_ahliwaris_13">
+<option selected="selected" value="0">0</option>
+
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>          <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_23" name="cb_ahliwaris_23">
+<option selected="selected" value="0">0</option>
+</select></td>         </tr>
+<tr bgcolor="#999999">         <td class="faraid_out"><input id="ch_ahliwaris_4" name="ch_ahliwaris_4" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="4" /></td>          <td class="faraid_out">4. <label id="l_ahliwaris_4">Bapak</label></td>          <td class="faraid_out"><input id="ch_ahliwaris_14" name="ch_ahliwaris_14" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="14" /></td>         <td class="faraid_out">14. <label id="l_ahliwaris_14">Saudara Wnt 
+se-bapak</label></td>         <td class="faraid_out"><input id="ch_ahliwaris_24" name="ch_ahliwaris_24" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="24" /></td>         <td class="faraid_out">24. <label id="l_ahliwaris_24">Budak wanita yg 
+dibebaskan oleh si mayit</label></td>          </tr>
+<tr>         <td bgcolor="#CCCCCC" class="faraid_out"></td>          <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_4" name="cb_ahliwaris_4" style="visibility: hidden;">
+<option selected="selected" value="0">0</option>
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_14" name="cb_ahliwaris_14">
+
+<option selected="selected" value="0">0</option>
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>          <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_24" name="cb_ahliwaris_24">
+<option selected="selected" value="0">0</option>
+</select></td>         </tr>
+<tr>         <td bgcolor="#CCCCCC" class="faraid_out"><input id="ch_ahliwaris_5" name="ch_ahliwaris_5" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="5" /></td>         <td bgcolor="#999999" class="faraid_out">5. <label id="l_ahliwaris_5">
+Ibu</label></td>          <td bgcolor="#CCCCCC" class="faraid_out"><input id="ch_ahliwaris_15" name="ch_ahliwaris_15" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="15" /></td>         <td bgcolor="#999999" class="faraid_out">15. <label id="l_ahliwaris_15">
+Saudara Lk se-ibu</label></td>          <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         </tr>
+<tr>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_5" name="cb_ahliwaris_5" style="visibility: hidden;">
+
+<option selected="selected" value="0">0</option>
+</select></td>          <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_15" name="cb_ahliwaris_15">
+<option selected="selected" value="0">0</option>
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>          </tr>
+<tr>          <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_6" name="ch_ahliwaris_6" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="6" /></td>         <td bgcolor="#999999" class="faraid_out">6. <label id="l_ahliwaris_6">
+Cucu Lk dari Anak LK</label></td>         <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_16" name="ch_ahliwaris_16" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="16" /></td>         <td bgcolor="#999999" class="faraid_out">16. <label id="l_ahliwaris_16">
+Saudara Wnt se-ibu</label></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>          <td bgcolor="#CCCCCC" class="faraid_out"></td>         </tr>
+<tr>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_6" name="cb_ahliwaris_6">
+<option selected="selected" value="0">0</option>
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>          <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_16" name="cb_ahliwaris_16">
+<option selected="selected" value="0">0</option>
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         </tr>
+<tr>         <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_7" name="ch_ahliwaris_7" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="7" /></td>          <td bgcolor="#999999" class="faraid_out">7. Cucu Wnt dari Anak LK</td>         <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_17" name="ch_ahliwaris_17" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="17" /></td>         <td bgcolor="#999999" class="faraid_out">17. <label id="l_ahliwaris_17">
+Anak Lk dr Saudara Kandung Lk</label></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         </tr>
+<tr>          <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_7" name="cb_ahliwaris_7">
+<option selected="selected" value="0">0</option>
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_17" name="cb_ahliwaris_17">
+<option selected="selected" value="0">0</option>
+
+</select></td>          <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         </tr>
+<tr>         <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_8" name="ch_ahliwaris_8" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="8" /></td>         <td bgcolor="#999999" class="faraid_out">8. <label id="l_ahliwaris_8">
+Kakek pihak bapak</label></td>          <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_18" name="ch_ahliwaris_18" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="18" /></td>         <td bgcolor="#999999" class="faraid_out">18. <label id="l_ahliwaris_18">
+Anak Lk dr Saudara Kandung se-bapak</label></td>          <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         </tr>
+<tr>          <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_8" name="cb_ahliwaris_8" style="visibility: hidden;">
+<option selected="selected" value="0">0</option>
+</select></td>          <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_18" name="cb_ahliwaris_18">
+<option selected="selected" value="0">0</option>
+
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         </tr>
+<tr>          <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_9" name="ch_ahliwaris_9" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="9" /></td>         <td bgcolor="#999999" class="faraid_out">9. <label id="l_ahliwaris_9">
+Nenek pihak bapak</label></td>          <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_19" name="ch_ahliwaris_19" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="19" /></td>         <td bgcolor="#999999" class="faraid_out">19. <label id="l_ahliwaris_19">
+Saudara Kandung Lk dr bapak - paman (hingga ke atas)</label></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         </tr>
+<tr>          <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_9" name="cb_ahliwaris_9" style="visibility: hidden;">
+<option selected="selected" value="0">0</option>
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_19" name="cb_ahliwaris_19">
+<option selected="selected" value="0">0</option>
+
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         </tr>
+<tr>         <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_10" name="ch_ahliwaris_10" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="10" /></td>         <td bgcolor="#999999" class="faraid_out">10. <label id="l_ahliwaris_10">
+Nenek pihak ibu</label></td>          <td bgcolor="#999999" class="faraid_out"><input id="ch_ahliwaris_20" name="ch_ahliwaris_20" onclick="on_ch_ahliwaris();set_change_cb(this.value);" type="checkbox" value="20" /></td>          <td bgcolor="#999999" class="faraid_out">20. <label id="ch_ahliwaris_20">
+Saudara Lk se-bapak dr pihak bapak-paman-(hingga ke atas)</label></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         </tr>
+<tr>          <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_10" name="cb_ahliwaris_10" style="visibility: hidden;">
+<option selected="selected" value="0">0</option>
+
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"><select disabled="disabled" id="cb_ahliwaris_20" name="cb_ahliwaris_20">
+<option selected="selected" value="0">0</option>
+
+</select></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         <td bgcolor="#CCCCCC" class="faraid_out"></td>         </tr>
+</tbody></table>
+</td>     <td></td>   </tr>
+<tr>      <td></td>     <td></td>     <td></td>     <td></td>   </tr>
+<tr>     <td colspan="4"><b class="style2">Pembagian</b></td>   </tr>
+<tr>     <td></td>     <td>Keterangan : </td>     <td></td>     <td></td>    </tr>
+<tr>     <td></td>      <td colspan="2"><input name="Proses" onclick="calculate_warisan_ahliwaris()" type="button" value="Kalkulasi Pembagian Harta" />
+
+<table border="0" cellpadding="2" cellspacing="1" style="width: 100%px;"><thead>
+<tr>         <td align="center" bgcolor="#FF9900" class="faraid_out" height="25" width="5%">Jml</td>          <td bgcolor="#FF9900" class="faraid_out" width="39%">Ahli Waris </td>          <td bgcolor="#FF9900" class="faraid_out" width="25%">Keterangan</td>         <td align="center" bgcolor="#FF9900" class="faraid_out" width="9%">Bagian</td>         <td align="center" bgcolor="#FF9900" class="faraid_out" >Perkepala</td>         <td align="center" bgcolor="#FF9900" class="faraid_out" >Total</td>        </tr>
+</thead>     <tbody id="tbl_hasil">       <!--
+<tr>         <td height="23" bgcolor="#CCCCCC" class="faraid_out">&nbsp;</td>         <td bgcolor="#CCCCCC" class="faraid_out">&nbsp;</td>         <td bgcolor="#CCCCCC" class="faraid_out">&nbsp;</td>         <td bgcolor="#CCCCCC" class="faraid_out">&nbsp;</td>         <td bgcolor="#CCCCCC" class="faraid_out">&nbsp;</td>         <td bgcolor="#CCCCCC" class="faraid_out">&nbsp;</td>       </tr>
+-->     </tbody>     </table>
+</td>     <td></td>   </tr>
+<tr>     <td></td>      <td></td>     <td></td>     <td></td>   </tr>
+</tbody></table>
+</form>
+<script language="JavaScript" type="text/javascript">
+/*<![CDATA[*/
+    init_faraid();
+/*]]>*/
+
+</script>
+</body>
+</html>
