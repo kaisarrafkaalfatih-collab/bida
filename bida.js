@@ -18,7 +18,7 @@ BIDA = {
                 data_id = $(this).attr('rel');
                 data = '';
                 BIDA.showLoading();
-                if(data_id!='mtq_cart' && data_id!='simulasizakat_cart' && data_id!='simulasifaroidh_cart' && data_id!='penyuluh_cart' && data_id!='sakinah_cart' && data_id!='zakat_cart' && data_id!='penais_cart' && data_id!='waqaf_cart' && data_id!='urais_cart' && data_id!='sekretariat_cart' ){
+                if(data_id!='grafiknikah_cart' && data_id!='mtaklim_cart' && data_id!='mtq_cart' && data_id!='simulasizakat_cart' && data_id!='simulasifaroidh_cart' && data_id!='penyuluh_cart' && data_id!='sakinah_cart' && data_id!='zakat_cart' && data_id!='penais_cart' && data_id!='waqaf_cart' && data_id!='urais_cart' && data_id!='sekretariat_cart' ){
                 	BIDA.getData(data_id);
                 }else{
                 	data = $('#'+data_id).html();
