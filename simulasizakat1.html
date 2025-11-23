@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>SIMULASI ZAKAT</title>
+<!--CSS styles-->
+        <link rel="stylesheet" href="bootstrap.css">
+        <link rel="stylesheet" href="style.css">
+        <!--/CSS styles-->
+        <!--Javascript files-->
+        <script type="text/javascript" src="jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="jquery.dropdownit.js"></script>
+        <script type="text/javascript" src="bootstrap.min.js"></script>
+        </style>
+		<style type="text/css">
+
+<!--
+body {
+	background-color: transparent;}
+
+ul li a,ul li a:link, ul li a:visited
+  {color: #333333;
+  text-decoration: none;}
+
+
+-->
+</style>
+</head>
+
+<body>
+<div class="tab-content" style="background-color:#fff;padding:10px;border:1px solid #ccc;margin-top:-1px;">
+<ul class="ul-boxed list-unstyled">
+          
+            <li style="display: list-item;" class="div_detail_kua" id="div_jml_kua_2014">
+<h1 align="center" class="style4" >SIMULASI ZAKAT</h1>
+<script language="JavaScript" type="text/javascript">
+<!--
+ function calc_total()
+ {
+  document.Kalkulator.zakat.value =
+  parseFloat(document.Kalkulator.z1.value) +
+  parseFloat(document.Kalkulator.z2.value) +
+  parseFloat(document.Kalkulator.z3.value);
+  document.Kalkulator.disp_zakat.value = document.Kalkulator.zakat.value;
+ }
+
+ function calc_nisab()
+ {
+  var emas = parseInt(document.Kalkulator.fz.value);
+  var nisab = emas * 85;
+  document.Kalkulator.nisab.value = nisab;
+ }
+
+ function calc_simpanan()
+ {
+  document.Kalkulator.ff.value = 
+   parseInt(document.Kalkulator.fa.value) +
+   parseInt(document.Kalkulator.fb.value) +
+   parseInt(document.Kalkulator.fc.value) +
+   parseInt(document.Kalkulator.fd.value) +
+   parseInt(document.Kalkulator.fe.value);
+
+  var zakatable =
+   parseInt(document.Kalkulator.ff.value) -
+   parseInt(document.Kalkulator.fg.value);
+
+  calc_nisab();
+  var nisab = document.Kalkulator.nisab.value;
+
+  if (zakatable < nisab){
+   zakatable = 0;
+  }
+  document.Kalkulator.fh.value = zakatable;
+  var zakat = 0.025 * zakatable;
+  document.Kalkulator.z1.value = zakat;
+  calc_total();
+ }
+
+ function calc_profesi()
+ {
+  var pendapatan =
+   (12 * parseInt(document.Kalkulator.fj.value)) +
+   parseInt(document.Kalkulator.fk.value);
+  var pengeluaran =
+   (12 * parseInt(document.Kalkulator.fm.value)) +
+   parseInt(document.Kalkulator.fn.value);
+  var zakatable = pendapatan - pengeluaran;
+ 
+  document.Kalkulator.fl.value = pendapatan;
+  document.Kalkulator.fo.value = pengeluaran;
+
+  calc_nisab();
+  var nisab = document.Kalkulator.nisab.value;
+  if (zakatable < nisab){
+   zakatable = 0;
+  }
+  document.Kalkulator.fp.value = zakatable;
+  var zakat = 0.025 * zakatable;
+  document.Kalkulator.z2.value = zakat;
+  calc_total();
+ }
+
+ function calc_usaha()
+ {
+  var zakatable =
+   0.01 * parseFloat(document.Kalkulator.ft.value) *
+   (parseInt(document.Kalkulator.fr.value) -
+   parseInt(document.Kalkulator.fs.value));
+  document.Kalkulator.fu.value = zakatable;
+  calc_nisab();
+  var nisab = document.Kalkulator.nisab.value;
+  if (zakatable < nisab){
+   zakatable = 0;
+  }
+  document.Kalkulator.fv.value = zakatable;
+  var zakat = 0.025 * zakatable;
+  document.Kalkulator.z3.value = zakat;
+  calc_total();
+ }
+
+-->
+                              </script>
+<br />
+<form action="" method="post" name="Kalkulator" id="Kalkulator">
+                                  <table align="center" bordercolor="#333333" class="table  table-bordered table-striped table-data">
+                                  <tbody>
+                                    
+                                    <tr>
+                                      <td width="61%" bordercolor="#000000"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif"> a. Uang Tunai, Tabungan, Deposito atau sejenisnya</font></span></td>
+                                      <td width="24%" align="right" bordercolor="#000000"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif"><font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fa" class="textfield" onChange="calc_simpanan()" value="0" size="12">
+                                          </font></font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td bordercolor="#000000"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">b. Saham atau surat-surat berharga lainnya</font></span></td>
+                                      <td align="right" bordercolor="#000000"><div align="left" class="style1">
+                                          <p><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                            <input name="fb" class="textfield" onChange="calc_simpanan()" value="0" size="12">
+                                            </font><br />
+                                            <br />
+                                          </font></p>
+                                      </div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%" bordercolor="#000000"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">c. Real Estate (tidak termasuk rumah tinggal yang dipakai sekarang)</font></span></td>
+                                      <td width="24%" align="right" bordercolor="#000000"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif"><font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fc" class="textfield" onChange="calc_simpanan()" value="0" size="12">
+                                          </font></font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%" bordercolor="#000000"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">d. Emas, Perak, Permata atau sejenisnya</font></span></td>
+                                      <td width="24%" align="right" bordercolor="#000000"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fd" class="textfield" onChange="calc_simpanan()" value="0" size="12">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%" bordercolor="#000000"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">e. Mobil (lebih dari keperluan pekerjaan anggota keluarga)</font></span></td>
+                                      <td width="24%" align="right" bordercolor="#000000"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif"><font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fe" class="textfield" onChange="calc_simpanan()" value="0" size="12">
+                                          </font></font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%" bordercolor="#000000"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">f. Jumlah Harta Simpanan (A+B+C+D+E)</font></span></td>
+                                      <td width="24%" align="right" bordercolor="#000000"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="ff" class="fieldzakat" value="0" size="12" readonly="readonly">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%" bordercolor="#000000"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">g. Hutang Pribadi yg jatuh tempo dalam tahun ini</font></span></td>
+                                      <td width="24%" align="right" bordercolor="#000000"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fg" class="textfield" onChange="calc_simpanan()" value="0" size="12">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td bordercolor="#000000"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">h. Harta simpanan kena zakat(F-G, jika &amp; gt nisab)</font></span></td>
+                                      <td align="right" bordercolor="#000000"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fh" class="fieldzakat" value="0" size="12" readonly="readonly">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%" bordercolor="#000000"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif"><b>I. JUMLAH ZAKAT ATAS SIMPANAN YANG WAJIB DIBAYARKAN PER TAHUN (2,5% x H)</b></font></span></td>
+                                      <td width="24%" align="right" bordercolor="#000000"><div align="left" class="style1">
+                                          <p><font color="#000000" face="Arial, Helvetica, sans-serif"><strong>Rp</strong><font color="#000000" face="Arial, Helvetica, sans-serif">
+                                            <input name="z1" class="fieldzakat" value="0" size="12" readonly="readonly">
+                                            </font><br />
+                                            <br />
+                                          </font></p>
+                                      </div></td>
+                                    </tr>
+                                    
+                                    <tr> <tr>
+                                      <th colspan="3" style="color: rgb(255, 255, 255);" align="center">
+                                      <div align="left" class="style3">
+                                        <p>&nbsp;</p>
+                                        <p class="style4"><font face="Arial, Helvetica, sans-serif"><font size="3">ZAKAT PROFESI</font></font></p>
+                                      </div></th>
+                                    </tr></tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">j. Pendapatan / Gaji per Bulan (setelah dipotong pajak)</font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fj" class="textfield" onChange="calc_profesi()" value="0" size="12">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">k. Bonus/pendapatan lain-lain selama setahun</font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fk" class="textfield" onChange="calc_profesi()" value="0" size="12">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">l. Jumlah Pendapatan per Tahun</font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fl" class="fieldzakat" value="0" size="12" readonly="readonly">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">m. Rata-rata pengeluaran rutin per bulan (kebutuhan fisik, air, listrik, pendidikan, kesehatan, transportasi, dll)</font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif"><font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fm" class="textfield" onChange="calc_profesi()" value="0" size="12">
+                                          </font></font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">n. Pengeluaran lainnya dalam satu tahun (pendidikan, kesehatan, dll)</font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fn" class="textfield" onChange="calc_profesi()" value="0" size="12">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">o. Jumlah Pengeluaran per Tahun (12 x m + n)</font></span></td>
+                                      <td align="right"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fo" class="fieldzakat" value="0" size="12" readonly="readonly">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">p. Penghasilan kena zakat (L - O , jika &amp;gt nisab)</font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fp" class="fieldzakat" value="0" size="12" readonly="readonly">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><b><font color="#000000" face="Arial, Helvetica, sans-serif">Q. JUMLAH ZAKAT PROFESI YANG WAJIB DIBAYARKAN PER TAHUN (2,5% X P)</font></b></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif"><strong>Rp</strong><font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="z2" class="fieldzakat" value="0" size="12" readonly="readonly">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                      <th colspan="4" style="color: rgb(255, 255, 255);" align="center">
+                                          <div class="style3" align="left">
+                                            <p>&nbsp;</p>
+                                            <p><font face="Arial, Helvetica, sans-serif"><font size="3"  color="#006600">ZAKAT HARTA USAHA (PERDAGANGAN / BISNIS LAINNYA)</font></font></p>
+                                          </div></th>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">r. Nilai Kekayaan Perusahaan (termasuk uang tunai, simpanan di bank, real estate, alat produksi, inventori, barang jadi, dll)</font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fr" class="textfield" onChange="calc_usaha()" value="0" size="12">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">s. Utang perusahaan jatuh tempo</font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif"><font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fs" class="textfield" onChange="calc_usaha()" value="0" size="12">
+                                          </font></font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">t. Komposisi Kepemilikan (dalam persen)</font></span></td>
+                                      <td width="24%" align="right"><span class="style1"><br />
+                                        </span>
+                                          <div align="center" class="style1">
+                                            <div align="center"><font color="#000000" face="Arial, Helvetica, sans-serif"><font color="#000000" face="Arial, Helvetica, sans-serif"><font color="#000000" face="Arial, Helvetica, sans-serif">
+                                              <input name="ft" class="textfield" id="ft" onChange="calc_usaha()" value="100" size="12">
+                                            </font></font>%</font></div>
+                                          </div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">u. Jumlah Bersih Harta Usaha (t% x [r-s])</font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif"> Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fu" class="fieldzakat" value="0" size="12" readonly="readonly">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">v. Harta usaha kena zakat (u, jika &amp;gt nisab)</font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif"> Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fv" class="fieldzakat" value="0" size="12" readonly="readonly">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif"><b>W. JUMLAH ZAKAT ATAS HARTA USAHA YANG WAJIB DIBAYARKAN PER TAHUN (2,5% X v)</b></font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif"> <strong>Rp</strong><font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="z3" class="fieldzakat" value="0" size="12" readonly="readonly">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                   
+                                    <tr>
+                                      <td bgcolor="#fbc01a"><span class="style1"><b><font color="#000000" face="Arial, Helvetica, sans-serif"><span class="style2">TOTAL ZAKAT YANG HARUS DIBAYARKAN (I+Q+V)</span></font></b></span></td>
+                                      <td bgcolor="#fbc01a"><span class="style1"><br />
+                                        </span>
+                                          <div align="left" class="style1">
+                                            <p><font color="#000000" face="Arial, Helvetica, sans-serif"><strong>Rp</strong><font color="#000000" face="Arial, Helvetica, sans-serif">
+                                              <input name="disp_zakat" class="fieldzakat2" value="0" size="12" readonly="readonly">
+                                              </font><br />
+                                              <input name="zakat" value="850000" type="hidden">
+                                              <br />
+                                              <br />
+                                            </font></p>
+                                          </div></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                      <th colspan="4" style="color: rgb(255, 255, 255);" align="center">
+                                          <div class="style3" align="left">
+                                            <p>&nbsp;</p>
+                                            <p><font face="Arial, Helvetica, sans-serif"><font size="3"  color="#006600">PERHITUNGAN NISAB</font> </font></p>
+                                          </div></th>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">z. Harga Emas Murni Saat ini per Gram</font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="fz" class="textfield" onChange="calc_simpanan()" value="350000" size="12">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">Besarnya Nisab (z x 85 gram emas)</font></span></td>
+                                      <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
+                                          <input name="nisab" class="fieldzakat" value="29750000" size="12" readonly="readonly">
+                                          </font><br />
+                                          <br />
+                                      </font></div></td>
+                                    </tr>
+                                  </tbody>
+  </table>
+</form></li>
+            
+        </ul></div>
+</body>
+</html>
