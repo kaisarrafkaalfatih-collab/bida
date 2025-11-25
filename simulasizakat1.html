@@ -33,23 +33,7 @@ ul li a,ul li a:link, ul li a:visited
           
             <li style="display: list-item;" class="div_detail_kua" id="div_jml_kua_2014">
 <h1 align="center" class="style4" >SIMULASI ZAKAT</h1>
-				<script>
-  const input = document.getElementById('myInput');
-  const output = document.getElementById('formattedOutput');
-
-  input.addEventListener('input', function() {
-    let value = this.value;
-    // Hapus karakter non-numerik
-    value = value.replace(/\D/g, '');
-
-    // Format angka dengan pemisah ribuan
-    if (value) {
-      output.textContent = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-    } else {
-      output.textContent = '';
-    }
-  });
-</script>
+				
 <script language="JavaScript" type="text/javascript">
 <!--
  function calc_total()
@@ -145,7 +129,7 @@ ul li a,ul li a:link, ul li a:visited
                                     <tr>
                                       <td width="61%" bordercolor="#000000"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif"> a. Uang Tunai, Tabungan, Deposito atau sejenisnya</font></span></td>
                                       <td width="24%" align="right" bordercolor="#000000"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif"><font color="#000000" face="Arial, Helvetica, sans-serif">
-                                          <input name="fa" type="number" id="myInput" class="textfield" onChange="calc_simpanan()" value="0" size="12">
+                                          <input name="fa" class="textfield" onChange="calc_simpanan()" value="0" size="12">
                                           </font></font><br />
                                           <br />
                                       </font></div></td>
@@ -382,7 +366,7 @@ ul li a,ul li a:link, ul li a:visited
                                     <tr>
                                       <td width="61%"><span class="style2"><font color="#000000" face="Arial, Helvetica, sans-serif">Besarnya Nisab (z x 85 gram emas)</font></span></td>
                                       <td align="right" width="24%"><div align="left" class="style1"><font color="#000000" face="Arial, Helvetica, sans-serif">Rp<font color="#000000" face="Arial, Helvetica, sans-serif">
-                                          <input type="number" min="0" step="100" id="myInput" name="nisab" class="fieldzakat" step="any" value="189860480" size="12" readonly="readonly">
+                                          <input name="nisab" class="fieldzakat" step="any" value="189860480" size="12" readonly="readonly">
                                           </font><br />
                                           <br />
                                       </font></div></td>
